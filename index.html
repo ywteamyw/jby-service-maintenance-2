@@ -242,7 +242,7 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
 .certs-sub{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:18px;line-height:1.6;color:var(--mute);max-width:660px;margin:0 auto 42px}
 .certs-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:44px}
 .cert{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:300px}
-.cert-cap{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:14px;line-height:1.5;color:var(--mute);margin:0}
+.cert-cap{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:16px;line-height:1.55;color:var(--mute);margin:0}
 .cert-word{font-family:'Mesmerize',sans-serif;font-weight:400;font-size:22px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
 .cert-logo{display:flex;align-items:center;justify-content:center;min-width:190px;height:100px;padding:0 30px;border:0.5px solid var(--line);border-radius:3px;background:#fff;font-family:'Mesmerize',sans-serif;font-weight:300;font-size:19px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);opacity:.72}
 .cert-logo.placeholder{color:var(--mute);border-style:dashed;opacity:.6}
@@ -315,7 +315,7 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
 .loc-list{display:flex;flex-direction:column;gap:16px;max-height:648px;overflow:auto;padding-right:6px}
 .loc-filter-note{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:14px;line-height:1.5;color:var(--mute);margin:-12px 0 26px}
 .loc-item{display:block;background:#fff;border:0.5px solid var(--line);border-radius:3px;padding:22px 26px;cursor:pointer;transition:border-color .25s ease,box-shadow .25s ease}
-.loc-item:hover,.loc-item.active{border-color:rgba(65,100,123,.45);box-shadow:0 8px 22px -14px rgba(20,30,44,.2)}
+.loc-item:hover,.loc-item.active{border-color:rgba(65,100,123,.55)}
 .loc-tag{display:inline-block;font-family:'Mesmerize',sans-serif;font-weight:300;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:3px 10px;border-radius:2px;line-height:1;margin-bottom:13px}
 .loc-tag--service{background:var(--navy);color:#fff}
 .loc-tag--mobile{background:#eef1f4;color:var(--navy);border:0.5px solid rgba(65,100,123,.35)}
@@ -462,19 +462,19 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
     </div>
     <div class="loc-filter rise" id="loc-filter" role="tablist" aria-label="Filter locations by service type">
       <button class="on" data-filter="all" role="tab" aria-selected="true">All<span class="n"></span></button>
-      <button data-filter="service" role="tab" aria-selected="false">Service<span class="n"></span></button>
+      <button data-filter="service" role="tab" aria-selected="false">Service Center<span class="n"></span></button>
       <button data-filter="mobile" role="tab" aria-selected="false">Mobile Service<span class="n"></span></button>
       <button data-filter="maritime" role="tab" aria-selected="false">Maritime<span class="n"></span></button>
     </div>
     <div class="ports-grid">
       <div class="loc-list rise" id="loc-list">
       <div class="loc-item" data-slug="san-diego-boatyard" data-types="service" data-lat="32.7135" data-lng="-117.2330" data-address="2614 Shelter Island Drive, Suite A, San Diego, CA 92106" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
-        <span class="loc-tag loc-tag--service">Service</span>
+        <span class="loc-tag loc-tag--service">Service Center</span>
         <h5>San Diego Marina &amp; Boatyard</h5>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="san-diego" data-types="service" data-lat="32.7180" data-lng="-117.2270" data-address="2330 Shelter Island Drive, Suite 105, San Diego, CA 92106" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
-        <span class="loc-tag loc-tag--service">Service</span>
+        <span class="loc-tag loc-tag--service">Service Center</span>
         <h5>San Diego</h5>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
@@ -484,17 +484,17 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="marina-del-rey" data-types="service" data-lat="33.9776" data-lng="-118.4497" data-address="13900 Marquesas Way, Marina del Rey, CA 90292" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
-        <span class="loc-tag loc-tag--service">Service</span>
+        <span class="loc-tag loc-tag--service">Service Center</span>
         <h5>Marina del Rey</h5>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="sausalito" data-types="service" data-lat="37.8637" data-lng="-122.4998" data-address="300B Harbor Drive, Sausalito, CA 94965" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
-        <span class="loc-tag loc-tag--service">Service</span>
+        <span class="loc-tag loc-tag--service">Service Center</span>
         <h5>Sausalito</h5>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="seattle" data-types="service" data-lat="47.6640" data-lng="-122.4010" data-address="2288 W Commodore Way, Suite 110, Seattle, WA 98199" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
-        <span class="loc-tag loc-tag--service">Service</span>
+        <span class="loc-tag loc-tag--service">Service Center</span>
         <h5>Seattle</h5>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
@@ -504,12 +504,12 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="wrightsville-beach" data-types="service" data-lat="34.2085" data-lng="-77.8020" data-address="100 Keel Street, Wrightsville Beach, NC 28480" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
-        <span class="loc-tag loc-tag--service">Service</span>
+        <span class="loc-tag loc-tag--service">Service Center</span>
         <h5>Wrightsville Beach</h5>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="charleston" data-types="service" data-lat="32.7990" data-lng="-79.9560" data-address="49 Immigration Street, Suite 101F, Charleston, SC 29403" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
-        <span class="loc-tag loc-tag--service">Service</span>
+        <span class="loc-tag loc-tag--service">Service Center</span>
         <h5>Charleston</h5>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
@@ -734,7 +734,7 @@ else{
   function iconFor(c){return L.divIcon({className:'jby-divicon',html:'<div class="jby-marker"></div>',iconSize:[16,16],iconAnchor:[8,8]});}
   function mdiv(slug){var m=markers[slug];return m&&m._icon?m._icon.querySelector('.jby-marker'):null;}
   function setActive(c,on){if(!c)return;c.classList.toggle('active',on);var d=mdiv(slugOf(c));if(d)d.classList.toggle('on',on);}
-  function frame(animate){if(!map)return;var vis=cards.filter(function(c){return !c.classList.contains('hide');});if(!vis.length)return;var pts=vis.map(coordsOf);var opt=animate?{animate:true,duration:.7}:{animate:false};if(pts.length===1){map.flyTo(pts[0],10,opt);return;}var main=pts.filter(function(p){return p[1]>-140;});if(main.length===pts.length){if(animate)map.flyTo(US_VIEW.center,US_VIEW.zoom,opt);else map.setView(US_VIEW.center,US_VIEW.zoom);return;}var b=main.length>1?main:pts;if(animate)map.flyToBounds(b,{padding:[46,46],maxZoom:6,duration:.7});else map.fitBounds(b,{padding:[46,46],maxZoom:6});}
+  function frame(animate){if(!map)return;var vis=cards.filter(function(c){return !c.classList.contains('hide');});if(!vis.length)return;var pts=vis.map(coordsOf);if(pts.length===1){map.flyTo(pts[0],9,{animate:!!animate,duration:.7});return;}if(animate)map.flyToBounds(pts,{padding:[54,44],maxZoom:5,duration:.7});else map.fitBounds(pts,{padding:[54,44],maxZoom:5});}
   function initMap(){
     map=L.map('loc-map',{scrollWheelZoom:false,zoomControl:true,attributionControl:true,minZoom:2,maxZoom:16});
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:19,attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(map);
