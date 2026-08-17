@@ -314,13 +314,13 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
 .ports-grid{display:grid;grid-template-columns:430px minmax(0,1fr);gap:40px;align-items:stretch}
 .loc-list{display:flex;flex-direction:column;gap:16px;max-height:648px;overflow:auto;padding-right:6px}
 .loc-filter-note{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:14px;line-height:1.5;color:var(--mute);margin:-12px 0 26px}
-.loc-item{display:block;background:#fff;border-radius:3px;padding:24px 28px 22px;cursor:pointer;transition:box-shadow .25s ease;box-shadow:0 1px 0 rgba(0,0,0,.05)}
-.loc-item:hover,.loc-item.active{box-shadow:0 16px 38px -12px rgba(20,30,44,.22)}
+.loc-item{display:block;background:#fff;border:0.5px solid var(--line);border-radius:3px;padding:22px 26px;cursor:pointer;transition:border-color .25s ease,box-shadow .25s ease}
+.loc-item:hover,.loc-item.active{border-color:rgba(65,100,123,.45);box-shadow:0 8px 22px -14px rgba(20,30,44,.2)}
 .loc-tag{display:inline-block;font-family:'Mesmerize',sans-serif;font-weight:300;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:3px 10px;border-radius:2px;line-height:1;margin-bottom:13px}
 .loc-tag--service{background:var(--navy);color:#fff}
 .loc-tag--mobile{background:#eef1f4;color:var(--navy);border:0.5px solid rgba(65,100,123,.35)}
 .loc-tag--maritime{background:var(--sand);color:#1c1c22}
-.loc-item h5{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:20px;line-height:26px;letter-spacing:0;text-transform:uppercase;color:var(--ink);margin:0 0 12px}
+.loc-item h5{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:20px;line-height:26px;letter-spacing:0;text-transform:uppercase;color:var(--ink);margin:0 0 14px}
 .loc-item .addr{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:15px;line-height:22px;color:var(--mute);margin:0 0 4px}
 .loc-item .phone{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:15px;line-height:22px;color:var(--mute);margin:0 0 16px}
 .loc-item .more{display:inline-flex;align-items:center;gap:7px;font-family:'Mesmerize',sans-serif;font-weight:300;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);transition:gap .25s ease}
@@ -466,71 +466,53 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
       <button data-filter="mobile" role="tab" aria-selected="false">Mobile Service<span class="n"></span></button>
       <button data-filter="maritime" role="tab" aria-selected="false">Maritime<span class="n"></span></button>
     </div>
-    <p class="loc-filter-note rise">Every location offers service &mdash; on-site at our service centers, or mobile to your slip.</p>
     <div class="ports-grid">
       <div class="loc-list rise" id="loc-list">
       <div class="loc-item" data-slug="san-diego-boatyard" data-types="service" data-lat="32.7135" data-lng="-117.2330" data-address="2614 Shelter Island Drive, Suite A, San Diego, CA 92106" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
         <span class="loc-tag loc-tag--service">Service</span>
         <h5>San Diego Marina &amp; Boatyard</h5>
-        <p class="addr">2614 Shelter Island Drive, Suite A, San Diego, CA 92106</p>
-        <p class="phone">+1 619-222-9899</p>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="san-diego" data-types="service" data-lat="32.7180" data-lng="-117.2270" data-address="2330 Shelter Island Drive, Suite 105, San Diego, CA 92106" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
         <span class="loc-tag loc-tag--service">Service</span>
         <h5>San Diego</h5>
-        <p class="addr">2330 Shelter Island Drive, Suite 105, San Diego, CA 92106</p>
-        <p class="phone">+1 619-222-9899</p>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="newport-harbor" data-types="maritime" data-lat="33.6189" data-lng="-117.9298" data-address="3101 West Coast Highway, Suite 130, Newport Beach, CA 92663" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
         <span class="loc-tag loc-tag--maritime">Maritime</span>
         <h5>Newport Harbor</h5>
-        <p class="addr">3101 West Coast Highway, Suite 130, Newport Beach, CA 92663</p>
-        <p class="phone">+1 949-524-3143</p>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="marina-del-rey" data-types="service" data-lat="33.9776" data-lng="-118.4497" data-address="13900 Marquesas Way, Marina del Rey, CA 90292" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
         <span class="loc-tag loc-tag--service">Service</span>
         <h5>Marina del Rey</h5>
-        <p class="addr">13900 Marquesas Way, Marina del Rey, CA 90292</p>
-        <p class="phone">+1 310-295-9236</p>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="sausalito" data-types="service" data-lat="37.8637" data-lng="-122.4998" data-address="300B Harbor Drive, Sausalito, CA 94965" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
         <span class="loc-tag loc-tag--service">Service</span>
         <h5>Sausalito</h5>
-        <p class="addr">300B Harbor Drive, Sausalito, CA 94965</p>
-        <p class="phone">+1 510-701-4880</p>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="seattle" data-types="service" data-lat="47.6640" data-lng="-122.4010" data-address="2288 W Commodore Way, Suite 110, Seattle, WA 98199" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
         <span class="loc-tag loc-tag--service">Service</span>
         <h5>Seattle</h5>
-        <p class="addr">2288 W Commodore Way, Suite 110, Seattle, WA 98199</p>
-        <p class="phone">+1 206-274-5257</p>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="kona" data-types="mobile" data-lat="19.6420" data-lng="-155.9960" data-address="73-4539 Iki Place, Kailua-Kona, HI 96740" data-hours="By appointment">
         <span class="loc-tag loc-tag--mobile">Mobile Service</span>
         <h5>Kona</h5>
-        <p class="addr">73-4539 Iki Place, Kailua-Kona, HI 96740</p>
-        <p class="phone">+1 808-989-8305</p>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="wrightsville-beach" data-types="service" data-lat="34.2085" data-lng="-77.8020" data-address="100 Keel Street, Wrightsville Beach, NC 28480" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
         <span class="loc-tag loc-tag--service">Service</span>
         <h5>Wrightsville Beach</h5>
-        <p class="addr">100 Keel Street, Wrightsville Beach, NC 28480</p>
-        <p class="phone">+1 910-679-4158</p>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
       <div class="loc-item" data-slug="charleston" data-types="service" data-lat="32.7990" data-lng="-79.9560" data-address="49 Immigration Street, Suite 101F, Charleston, SC 29403" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
         <span class="loc-tag loc-tag--service">Service</span>
         <h5>Charleston</h5>
-        <p class="addr">49 Immigration Street, Suite 101F, Charleston, SC 29403</p>
-        <p class="phone">+1 843-277-0777</p>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </div>
       </div>
       <div id="loc-map" class="rise d1" aria-label="Map of Jeff Brown Yachts locations"></div>
     </div>
