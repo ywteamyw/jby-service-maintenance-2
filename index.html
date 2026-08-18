@@ -248,21 +248,27 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
 .cert-img{max-width:180px;max-height:42px;width:auto;height:auto;display:block}
 .certs-note{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:13px;line-height:1.5;color:var(--mute);opacity:.85;margin:26px auto 0;max-width:560px}
 @media(max-width:600px){.cert-logo{min-width:44%;height:82px;font-size:16px}}
-/* ===== Customer reviews / testimonials ===== */
-.reviews{background:var(--section);padding:clamp(80px,10vw,130px) 40px}
-.reviews-inner{max-width:1200px;margin:0 auto}
-.reviews-head{text-align:center;margin:0 0 clamp(40px,5vw,60px)}
-.reviews-eyebrow{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--sand);margin:0 0 16px}
-.reviews-head h2{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:28px;line-height:38px;letter-spacing:0;text-transform:uppercase;color:var(--ink);margin:0}
-.review-feature{max-width:900px;margin:0 auto clamp(48px,6vw,72px);text-align:center}
-.review-feature::before{content:"\201C";display:block;font-family:'Mesmerize',sans-serif;font-size:66px;line-height:.5;color:var(--sand);margin:0 0 14px}
-.review-feature .quote{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:clamp(23px,2.5vw,31px);line-height:1.34;letter-spacing:.005em;text-transform:none;color:var(--ink);margin:0 0 22px}
-.review-feature .by{font-family:'Myriad Pro',sans-serif;font-weight:400;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--mute);margin:0}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,3vw,48px)}
-.review{margin:0;padding-top:22px;border-top:1px solid rgba(0,0,0,.14)}
-.review .quote{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:17px;line-height:1.6;color:var(--ink);margin:0 0 16px}
-.review .by{font-family:'Myriad Pro',sans-serif;font-weight:400;font-size:13px;letter-spacing:.05em;text-transform:uppercase;color:var(--mute);margin:0}
-@media(max-width:820px){.reviews-grid{grid-template-columns:1fr;gap:0}.review{margin-top:26px}}
+/* ===== Customer reviews — editorial column slider ===== */
+.tmon{padding:clamp(80px,10vw,120px) 0;background:var(--section)}
+.tmon-inner{max-width:1200px;margin:0 auto;padding:0 40px}
+.tmon-head{text-align:center;margin:0 auto 44px}
+.tmon-head h2{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:28px;line-height:38px;letter-spacing:0;text-transform:uppercase;color:var(--ink);margin:0}
+.tmon-view{position:relative;overflow:hidden}
+.tmon-view::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line);z-index:2;pointer-events:none}
+.tmon-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none}
+.tmon-track::-webkit-scrollbar{display:none}
+.tmon-q{flex:0 0 50%;scroll-snap-align:start;padding:0 clamp(28px,3.5vw,60px);display:flex;flex-direction:column;gap:22px}
+.tmon-q blockquote{margin:0;font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:19px;line-height:31px;color:var(--ink)}
+.tmon-q .who{display:flex;flex-direction:column;gap:4px;margin-top:auto}
+.tmon-q .who .nm{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:16px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.tmon-q .who .bt{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:16px;color:var(--mute)}
+.tmon-nav{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:44px}
+.tmon-btn{width:48px;height:48px;border:1px solid rgba(0,0,0,.18);border-radius:2px;display:inline-flex;align-items:center;justify-content:center;color:var(--ink);background:none;cursor:pointer;padding:0;line-height:0;transition:border-color .25s,color .25s,opacity .25s}
+.tmon-btn:hover{border-color:var(--navy);color:var(--navy)}
+.tmon-btn:disabled{opacity:.32;cursor:default}
+.tmon-btn:disabled:hover{border-color:rgba(0,0,0,.18);color:var(--ink)}
+.tmon-btn svg{width:20px;height:20px;display:block}
+@media(max-width:760px){.tmon-q{flex-basis:100%;padding:0}.tmon-view::before{display:none}}
 @media (max-width:1024px){
   .offer{padding:80px 24px 0}
   .sec-head h2{font-size:26px;line-height:36px}
@@ -563,20 +569,48 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
 </section>
 
 <!-- CUSTOMER REVIEWS -->
-<section class="reviews" id="reviews">
-  <div class="reviews-inner">
-    <div class="reviews-head rise">
-      <p class="reviews-eyebrow">What owners say</p>
-      <h2>Trusted by owners up and down the coast</h2>
+<section class="tmon" id="reviews">
+  <div class="tmon-inner">
+    <div class="tmon-head rise"><h2>What our clients say</h2></div>
+    <div class="tmon-view rise">
+      <div class="tmon-track" id="tmonTrack">
+        <figure class="tmon-q">
+          <blockquote>They treat my boat like it&rsquo;s their own. Whatever it needs is handled before I even ask.</blockquote>
+          <figcaption class="who"><span class="nm">Michael R.</span><span class="bt">Annual service &middot; San Diego</span></figcaption>
+        </figure>
+        <figure class="tmon-q">
+          <blockquote>Haul-out, full service, and back in the water without me lifting a finger. That&rsquo;s the whole point.</blockquote>
+          <figcaption class="who"><span class="nm">David &amp; Anne L.</span><span class="bt">Refit &amp; haul-out &middot; Newport Harbor</span></figcaption>
+        </figure>
+        <figure class="tmon-q">
+          <blockquote>The mobile team came straight to my slip and had everything sorted the same afternoon.</blockquote>
+          <figcaption class="who"><span class="nm">Tom H.</span><span class="bt">Mobile service &middot; Seattle</span></figcaption>
+        </figure>
+        <figure class="tmon-q">
+          <blockquote>In fifteen years of ownership I&rsquo;ve never had service this seamless. One call, and it&rsquo;s done.</blockquote>
+          <figcaption class="who"><span class="nm">Robert K.</span><span class="bt">Full-service program &middot; Charleston</span></figcaption>
+        </figure>
+        <figure class="tmon-q">
+          <blockquote>Engine service, electronics, and bottom paint, all coordinated in one visit. Effortless.</blockquote>
+          <figcaption class="who"><span class="nm">Elena V.</span><span class="bt">Scheduled maintenance &middot; Marina del Rey</span></figcaption>
+        </figure>
+        <figure class="tmon-q">
+          <blockquote>Warranty work handled directly with the builder. I never had to chase a single thing.</blockquote>
+          <figcaption class="who"><span class="nm">James P.</span><span class="bt">Warranty service &middot; Sausalito</span></figcaption>
+        </figure>
+        <figure class="tmon-q">
+          <blockquote>Certified techs, genuine parts, and honest advice. I trust them completely with the boat.</blockquote>
+          <figcaption class="who"><span class="nm">Caroline B.</span><span class="bt">Repeat client &middot; San Diego</span></figcaption>
+        </figure>
+        <figure class="tmon-q">
+          <blockquote>They keep her in perfect shape season after season. It&rsquo;s genuine peace of mind.</blockquote>
+          <figcaption class="who"><span class="nm">Andrew M.</span><span class="bt">Ongoing care &middot; Kona</span></figcaption>
+        </figure>
+      </div>
     </div>
-    <blockquote class="review-feature rise">
-      <p class="quote">In fifteen years of ownership I have never had service this seamless. One call, and it is handled before I even reach the dock.</p>
-      <p class="by">Yacht owner &middot; Charleston, SC</p>
-    </blockquote>
-    <div class="reviews-grid">
-      <blockquote class="review rise"><p class="quote">They treat my boat like it is their own. Whatever it needs, it is taken care of before I even ask.</p><p class="by">Owner &middot; San Diego, CA</p></blockquote>
-      <blockquote class="review rise d1"><p class="quote">Haul-out, full service, and back in the water without me lifting a finger. That is exactly the point.</p><p class="by">Owner &middot; Newport Beach, CA</p></blockquote>
-      <blockquote class="review rise d2"><p class="quote">The mobile team came straight to my slip and had everything sorted the same afternoon.</p><p class="by">Owner &middot; Seattle, WA</p></blockquote>
+    <div class="tmon-nav">
+      <button class="tmon-btn prev" aria-label="Previous reviews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button class="tmon-btn next" aria-label="More reviews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 6 6 6-6 6"/></svg></button>
     </div>
   </div>
 </section>
@@ -758,6 +792,17 @@ else{
   if(modal){modal.querySelectorAll('[data-close]').forEach(function(x){x.addEventListener('click',closeModal);});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeModal();});
     var exp=el('loc-modal-explore');if(exp)exp.addEventListener('click',function(){var c=modalCard;closeModal();if(c&&map){map.flyTo(coordsOf(c),11,{duration:.9});Object.keys(markers).forEach(function(k){var d=mdiv(k);if(d)d.classList.toggle('on',k===slugOf(c));});}});}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initMap);else initMap();
+})();
+
+/* Reviews slider — scroll one card per arrow, disable at ends */
+(function(){
+  var track=document.getElementById('tmonTrack');if(!track)return;
+  var prev=document.querySelector('.tmon-btn.prev'),next=document.querySelector('.tmon-btn.next');
+  function step(){var c=track.querySelector('.tmon-q');return c?Math.round(c.getBoundingClientRect().width):320;}
+  function upd(){var max=track.scrollWidth-track.clientWidth-2;if(prev)prev.disabled=track.scrollLeft<=2;if(next)next.disabled=track.scrollLeft>=max;}
+  if(prev)prev.addEventListener('click',function(){track.scrollBy({left:-step(),behavior:'smooth'});});
+  if(next)next.addEventListener('click',function(){track.scrollBy({left:step(),behavior:'smooth'});});
+  track.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
 })();
 </script>
 </body>
