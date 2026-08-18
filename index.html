@@ -794,16 +794,27 @@ else{
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initMap);else initMap();
 })();
 
-/* Reviews slider — scroll one card per arrow, disable at ends */
+/* Reviews slider — seamless infinite loop (3 copies + idle re-centering) */
 (function(){
   var track=document.getElementById('tmonTrack');if(!track)return;
   var prev=document.querySelector('.tmon-btn.prev'),next=document.querySelector('.tmon-btn.next');
+  var count=track.children.length;
+  var originals=[].slice.call(track.children);
+  // duplicate the set twice so there is a full copy of runway on each side
+  for(var c=0;c<2;c++){originals.forEach(function(n){track.appendChild(n.cloneNode(true));});}
   function step(){var c=track.querySelector('.tmon-q');return c?Math.round(c.getBoundingClientRect().width):320;}
+  function loopW(){return step()*count;}            // width of one full copy
   function page(){return (window.innerWidth<=760?1:2)*step();}
-  function upd(){var max=track.scrollWidth-track.clientWidth-2;if(prev)prev.disabled=track.scrollLeft<=2;if(next)next.disabled=track.scrollLeft>=max;}
+  function centre(){track.scrollLeft=loopW();}       // sit in the middle copy
+  function wrap(){var W=loopW(),x=track.scrollLeft;
+    if(x<W*0.5)track.scrollLeft=x+W;                  // drifted too far left → hop forward one copy
+    else if(x>W*1.5)track.scrollLeft=x-W;}            // too far right → hop back one copy
+  var idle;
+  track.addEventListener('scroll',function(){clearTimeout(idle);idle=setTimeout(wrap,120);},{passive:true});
   if(prev)prev.addEventListener('click',function(){track.scrollBy({left:-page(),behavior:'smooth'});});
   if(next)next.addEventListener('click',function(){track.scrollBy({left:page(),behavior:'smooth'});});
-  track.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+  window.addEventListener('resize',centre);
+  centre();
 })();
 </script>
 </body>
