@@ -324,6 +324,7 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
 .loc-item:hover,.loc-item.active{box-shadow:0 14px 36px -18px rgba(20,30,44,.20)}
 .loc-tag{display:inline-block;font-family:'Mesmerize',sans-serif;font-weight:300;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:3px 10px;border-radius:2px;line-height:1;margin-bottom:13px}
 .loc-tag--service{background:var(--navy);color:#fff}
+.loc-tag--sales{background:var(--mute);color:#fff}
 .loc-tag--mobile{background:#eef1f4;color:var(--navy);border:0.5px solid rgba(65,100,123,.35)}
 .loc-tag--maritime{background:var(--sand);color:#1c1c22}
 .loc-item h5{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:20px;line-height:26px;letter-spacing:0;text-transform:uppercase;color:var(--ink);margin:0 0 14px}
@@ -403,7 +404,7 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
   <div class="hero-veil"></div>
   <div class="hero-text">
     <h1>Service &amp; Maintenance</h1>
-    <p>Confident technicians come to you or to your slip, so your yacht is cared for without a boatyard trip, backed by a certified service network coast to coast.</p>
+    <p>Certified technicians come to you or to your slip, so your yacht is cared for without a boatyard trip, backed by a certified service network coast to coast.</p>
     <div class="hero-cta">
       <button class="btn-solid" data-scroll="#help">Request a Consultation</button>
     </div>
@@ -468,7 +469,8 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
     </div>
     <div class="loc-filter rise" id="loc-filter" role="tablist" aria-label="Filter locations by service type">
       <button class="on" data-filter="all" role="tab" aria-selected="true">All<span class="n"></span></button>
-      <button data-filter="service" role="tab" aria-selected="false">Service Center<span class="n"></span></button>
+      <button data-filter="sales" role="tab" aria-selected="false">Sales<span class="n"></span></button>
+      <button data-filter="service" role="tab" aria-selected="false">Service<span class="n"></span></button>
       <button data-filter="mobile" role="tab" aria-selected="false">Mobile Service<span class="n"></span></button>
       <button data-filter="maritime" role="tab" aria-selected="false">Maritime<span class="n"></span></button>
     </div>
@@ -489,8 +491,8 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
         <h5>Newport Harbor</h5>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
-      <div class="loc-item" data-slug="marina-del-rey" data-types="service" data-lat="33.9776" data-lng="-118.4497" data-address="13900 Marquesas Way, Marina del Rey, CA 90292" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
-        <span class="loc-tag loc-tag--service">Service Center</span>
+      <div class="loc-item" data-slug="marina-del-rey" data-types="sales mobile" data-lat="33.9776" data-lng="-118.4497" data-address="13900 Marquesas Way, Marina del Rey, CA 90292" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
+        <span class="loc-tag loc-tag--sales">Sales</span>
         <h5>Marina del Rey</h5>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
@@ -514,8 +516,8 @@ footer{background:var(--paper);padding:40px 40px 80px;color:var(--mute);font-siz
         <h5>Wrightsville Beach</h5>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
-      <div class="loc-item" data-slug="charleston" data-types="service" data-lat="32.7990" data-lng="-79.9560" data-address="49 Immigration Street, Suite 101F, Charleston, SC 29403" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
-        <span class="loc-tag loc-tag--service">Service Center</span>
+      <div class="loc-item" data-slug="charleston" data-types="sales mobile" data-lat="32.7990" data-lng="-79.9560" data-address="49 Immigration Street, Suite 101F, Charleston, SC 29403" data-hours="Mon &ndash; Sat, 8am &ndash; 5pm">
+        <span class="loc-tag loc-tag--sales">Sales</span>
         <h5>Charleston</h5>
         <span class="more">More info <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </div>
@@ -752,12 +754,12 @@ else{
     'san-diego-boatyard':{photo:'office_san_diego_boatyard.png',tel:'+16192229899',phone:'(619) 222-9899',desc:'Our full-service San Diego boatyard — haul-outs, refit, repair, and rigging on the water.'},
     'san-diego':{photo:'office_san_diego.jpg',tel:'+16192229899',phone:'(619) 222-9899',desc:'Our West Coast flagship, representing Axopar, BRABUS, Riva, and Pershing.'},
     'newport-harbor':{photo:'office_newport_harbor.jpg',tel:'+19495243143',phone:'(949) 524-3143',desc:'Our Newport Beach Maritime office. Private management and co-ownership programs.',website:'https://jeffbrownyachts.com'},
-    'marina-del-rey':{photo:'office_marina_del_rey.webp',tel:'+13102959236',phone:'(310) 295-9236',desc:'Our Los Angeles office, representing Axopar, BRABUS, and luxury brands.'},
+    'marina-del-rey':{photo:'office_marina_del_rey.webp',tel:'+13102959236',phone:'(310) 295-9236',desc:'Our Los Angeles sales office, representing Axopar, BRABUS, and luxury brands. Mobile service available on request.'},
     'sausalito':{photo:'office_sausalito.jpg',tel:'+15107014880',phone:'(510) 701-4880',desc:'Our Bay Area brokerage, representing Riva, Wally, and Pershing.'},
     'seattle':{photo:'office_seattle.jpg',tel:'+12062745257',phone:'(206) 274-5257',desc:'Our Pacific Northwest office, representing Axopar, BRABUS, and Riva.'},
     'kona':{photo:'office_kona.jpg',tel:'+18089898305',phone:'(808) 989-8305',desc:'Our Hawaiian outpost. Mobile service and private viewings by appointment.'},
     'wrightsville-beach':{photo:'office_wrightsville_beach.jpg',tel:'+19106794158',phone:'(910) 679-4158',desc:'Our East Coast office, representing Axopar, BRABUS, and Everglades.'},
-    'charleston':{photo:'office_charleston.jpg',tel:'+18432770777',phone:'(843) 277-0777',desc:'Our South Atlantic office, representing Axopar, Everglades, and BRABUS.'}
+    'charleston':{photo:'office_charleston.jpg',tel:'+18432770777',phone:'(843) 277-0777',desc:'Our South Atlantic sales office, representing Axopar, Everglades, and BRABUS. Mobile service available on request.'}
   };
   var WRENCH='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.6 6.1a3.8 3.8 0 0 0-5 4.9L4 16.6V20h3.4l5.6-5.6a3.8 3.8 0 0 0 4.9-5l-2.3 2.3-2.2-.6-.6-2.2z"/></svg>';
   function slugOf(c){return c.getAttribute('data-slug');}
