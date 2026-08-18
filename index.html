@@ -78,7 +78,7 @@ a{color:inherit;text-decoration:none}
 .hero{position:relative;width:100%;height:100vh;min-height:640px;overflow:hidden;background:#0a1620;color:#fff}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%}
 .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.42) 0%,rgba(0,0,0,0.12) 18%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.28) 68%,rgba(0,0,0,0.72) 100%)}
-.hero-text{position:absolute;left:40px;right:40px;bottom:64px;z-index:5;max-width:1360px}
+.hero-text{position:absolute;left:0;right:0;bottom:64px;z-index:5;max-width:1440px;margin:0 auto;padding:0 40px}
 .hero-text h1{font-family:'Mesmerize',sans-serif;font-weight:300;font-size:32px;line-height:48px;letter-spacing:0;
   text-transform:uppercase;margin:0 0 8px;max-width:760px}
 .hero-text p{font-family:'Myriad Pro',sans-serif;font-weight:300;font-size:18px;line-height:28px;color:rgba(255,255,255,0.92);
@@ -90,7 +90,7 @@ a{color:inherit;text-decoration:none}
 .hero-text p{animation:heroUp .9s var(--ease) .34s both}
 .hero-text .hero-cta{animation:heroUp .9s var(--ease) .52s both}
 @media (max-width:980px){
-  .hero-text{left:24px;right:24px;bottom:48px}
+  .hero-text{padding:0 24px;bottom:48px}
   .hero-text h1{font-size:26px;line-height:36px}
   .hero-text p{font-size:17px;line-height:26px}
 }
